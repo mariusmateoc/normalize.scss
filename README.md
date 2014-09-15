@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Normalize.scss v3.0.1
 
 Normalize.scss is a customisable SCSS file that makes browsers render all
@@ -47,3 +48,9 @@ You can see the [changelog here](https://github.com/necolas/normalize.css/blob/3
 
 Normalize.css is a project by [Nicolas Gallagher](https://github.com/necolas),
 co-created with [Jonathan Neal](https://github.com/jonathantneal).
+=======
+Normalize.scss
+==============
+
+A scss alternative for https://github.com/necolas/normalize.css
+>>>>>>> e81fd441a77a407a6ac371586cadfb9d92cbab03
