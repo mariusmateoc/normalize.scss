@@ -17,7 +17,7 @@ upgrade his browser if it's older then IE8. Need to add this to your markup:
   <![endif]-->
 ```
 
-[View the demo file](http://mariusmateoc.github.io/_normalize.scss/demo/index.html)
+[View the demo file](http://mariusmateoc.github.io/Normalize.scss/index.html)
 
 
 ## What does it do?
