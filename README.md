@@ -8,12 +8,12 @@ The project relies on researching the differences between default browser
 styles in order to precisely target only the styles that need or benefit from
 normalizing.
 
-You can also find style for browserhappy class which redirect the user to
+You can also find style for browserupgrade class which redirect the user to
 upgrade his browser if it's older then IE8. Need to add this to your markup:
 
 ```html
   <!--[if lt IE 8]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 ```
 
