@@ -11,7 +11,8 @@ $font-family-base: sans-serif !default;  /* Set the font family applied to 'html
 $font-family-code: monospace, monospace !default;  /* Set the font family for 'code' tag */
 $font-family-headings: inherit !default;  /* Set font family for headings, default inherited */
 
-$font-size-base: 1em !default;  /* Set font size for text. Use 'em' not 'rem' units to support IE8 */
+$font-size-base: 1.6rem !default;  /* Set font size for text on body based on root. 1.6rem = 16px */
+$font-size-code: 1.6rem !default;
 $line-height-base: 1.4 !default;  /* Set default line height for text applied to 'html' tag */
 $color-text-base: #222 !default;  /* Set color for text in website applied to 'html' tag */
 
@@ -22,10 +23,10 @@ $color-background-selection: #b3d4fc !default;  /* Set background color for sele
  */
 
 $color-link: blue !default;  /* Set the color for normal text link */
-$color-link-hover: darken($color-link, 10%) !default;  /* Set the color for text link on hover */
+$color-hover-link: darken($color-link, 10%) !default;  /* Set the color for text link on hover */
 
 $text-decoration-link: none !default;  /* Set text decoration for text link */
-$text-decoration-link-hover: none !default;  /* Set text decoration for text link on hover */
+$text-decoration-hover-link: none !default;  /* Set text decoration for text link on hover */
 
 
 
@@ -34,8 +35,8 @@ $text-decoration-link-hover: none !default;  /* Set text decoration for text lin
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  *
- * normalize.css v3.0.1 | MIT License | git.io/normalize
- * HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/
+ * normalize.css v3.0.3 | MIT License | git.io/normalize
+ * HTML5 Boilerplate v5.2.0 | MIT License | http://h5bp.com/
  */
 
 /* ==========================================================================
@@ -46,12 +47,11 @@ $text-decoration-link-hover: none !default;  /* Set text decoration for text lin
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
- * 3. Fallback for IE8 that don't support rem units.
  */
 
 html {
   font-family: $font-family-base; /* 1 */
-  font-size: $font-size-base;
+  font-size: 62.5%;
   line-height: $line-height-base;
   color: $color-text-base;
   -ms-text-size-adjust: 100%; /* 2 */
@@ -63,6 +63,7 @@ html {
  */
 
 body {
+  font-size: $font-size-base;
   margin: 0;
 }
 
@@ -98,10 +99,10 @@ hr {
 }
 
 /* ==========================================================================
-   Browse Happy prompt
+   Browse Upgrade prompt
    ========================================================================== */
 
-.browsehappy {
+.browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
@@ -127,6 +128,7 @@ footer,
 header,
 hgroup,
 main,
+menu,
 nav,
 section,
 summary {
@@ -141,12 +143,15 @@ summary {
 
 audio,
 canvas,
+progress,
 video {
   display: inline-block; /* 1 */
   vertical-align: middle; /* 2 */
 }
 
-img {
+img,
+iframe,
+svg {
   vertical-align: middle; /* 2 */
 }
 
@@ -200,8 +205,8 @@ a {
 a:active,
 a:hover {
   outline: 0;
-  color: $color-link-hover;
-  text-decoration: $text-decoration-link-hover;
+  color: $color-hover-link;
+  text-decoration: $text-decoration-hover-link;
 }
 
 /* ==========================================================================
@@ -338,7 +343,7 @@ kbd,
 pre,
 samp {
   font-family: $font-family-code;
-  font-size: 1em;
+  font-size: $font-size-code;
 }
 
 /* ==========================================================================
@@ -458,15 +463,12 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /**
  * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
- *    (include `-moz` to future-proof).
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
  */
 
 input[type="search"] {
   -webkit-appearance: textfield; /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box; /* 2 */
-  box-sizing: content-box;
+  box-sizing: content-box; /* 2 */
 }
 
 /**
@@ -485,9 +487,9 @@ input[type="search"]::-webkit-search-decoration {
  */
 
 fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /**
@@ -501,13 +503,12 @@ legend {
 }
 
 /**
- * 1. Remove default vertical scrollbar in IE 8/9/10/11.
- * 2. Allow only vertical resizing of textareas.
+ * Remove default vertical scrollbar in IE 8/9/10/11.
  */
 
 textarea {
-  overflow: auto;  /* 1 */
-  resize: vertical;  /* 2 */
+  overflow: auto;
+  resize: vertical;
 }
 
 /**
